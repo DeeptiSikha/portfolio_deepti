@@ -1,19 +1,29 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, CheckCircle, Mail, MapPin, Phone } from 'lucide-react';
+import { Send, CheckCircle, Mail, MapPin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    const mailtoUrl = `mailto:deeptisikha.stackapp@gmail.com?subject=Portfolio Contact from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+
     setStatus('submitting');
+    
+    // Simulate processing before opening mail client
     setTimeout(() => {
+      window.location.href = mailtoUrl;
       setStatus('success');
       // Reset after 3 seconds
       setTimeout(() => setStatus('idle'), 3000);
-    }, 1500);
+    }, 1200);
   };
 
   return (
@@ -36,7 +46,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Email Me</div>
-                  <div className="font-bold text-slate-900">alex@flutterarchitect.dev</div>
+                  <div className="font-bold text-slate-900">deeptisikha.stackapp@gmail.com</div>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -61,18 +71,20 @@ const Contact: React.FC = () => {
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Name</label>
                   <input 
+                    name="name"
                     required 
                     type="text" 
-                    placeholder="John Doe" 
+                    placeholder="Your Name" 
                     className="w-full px-6 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all placeholder:text-slate-300"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Email</label>
                   <input 
+                    name="email"
                     required 
                     type="email" 
-                    placeholder="john@example.com" 
+                    placeholder="your@email.com" 
                     className="w-full px-6 py-4 bg-slate-50 rounded-2xl border border-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-400 transition-all placeholder:text-slate-300"
                   />
                 </div>
@@ -80,6 +92,7 @@ const Contact: React.FC = () => {
               <div className="space-y-2">
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-widest ml-1">Message</label>
                 <textarea 
+                  name="message"
                   required 
                   rows={4} 
                   placeholder="Tell me about your project..." 
@@ -104,7 +117,7 @@ const Contact: React.FC = () => {
                 )}
                 {status === 'success' && (
                   <>
-                    <span>Message Sent!</span>
+                    <span>Opening Mail Client...</span>
                     <CheckCircle size={18} />
                   </>
                 )}
