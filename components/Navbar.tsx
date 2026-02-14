@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface NavbarProps {
-  onNavigate: (view: 'home' | 'about') => void;
-  currentView: 'home' | 'about';
+  onNavigate: (view: 'home' | 'about' | 'ai-attempts') => void;
+  currentView: 'home' | 'about' | 'ai-attempts';
 }
 
 const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
@@ -20,13 +20,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
 
   const navLinks = [
     { name: 'About Me', href: '#about', view: 'about' as const },
+    { name: 'AI attempts', href: '#ai-attempts', view: 'ai-attempts' as const },
     { name: 'Skills', href: '#skills', view: 'home' as const },
     { name: 'Projects', href: '#projects', view: 'home' as const },
     { name: 'Experience', href: '#experience', view: 'home' as const },
     { name: 'Contact', href: '#contact', view: 'home' as const },
   ];
 
-  const handleLinkClick = (e: React.MouseEvent, view: 'home' | 'about', href: string) => {
+  const handleLinkClick = (e: React.MouseEvent, view: 'home' | 'about' | 'ai-attempts', href: string) => {
     e.preventDefault();
     
     if (view !== currentView) {
@@ -78,13 +79,13 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
               className={`text-[11px] font-bold transition-colors uppercase tracking-[0.2em] relative py-1 ${
-                (link.view === currentView && link.view === 'about') || (currentView === 'home' && link.view === 'home' && i > 0)
+                (currentView === link.view && (link.view === 'about' || link.view === 'ai-attempts')) || (currentView === 'home' && link.view === 'home' && i > 1)
                   ? 'text-blue-600'
                   : 'text-slate-500 hover:text-blue-600'
               }`}
             >
               {link.name}
-              {((link.view === currentView && link.view === 'about')) && (
+              {(currentView === link.view && (link.view === 'about' || link.view === 'ai-attempts')) && (
                 <motion.div 
                   layoutId="nav-underline"
                   className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 rounded-full"

@@ -9,10 +9,11 @@ import Contact from './components/Contact';
 import AIChatWidget from './components/AIChatWidget';
 import Navbar from './components/Navbar';
 import AboutMe from './components/AboutMe';
+import AIAttempts from './components/AIAttempts';
 
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [currentView, setCurrentView] = useState<'home' | 'about'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'ai-attempts'>('home');
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 1000);
@@ -57,7 +58,7 @@ const App: React.FC = () => {
       
       <main>
         <AnimatePresence mode="wait">
-          {currentView === 'home' ? (
+          {currentView === 'home' && (
             <motion.div
               key="home"
               initial={{ opacity: 0 }}
@@ -71,7 +72,8 @@ const App: React.FC = () => {
               <ExperienceTimeline />
               <Contact />
             </motion.div>
-          ) : (
+          )}
+          {currentView === 'about' && (
             <motion.div
               key="about"
               initial={{ opacity: 0, x: 20 }}
@@ -82,6 +84,17 @@ const App: React.FC = () => {
               <AboutMe onBack={() => setCurrentView('home')} />
             </motion.div>
           )}
+          {currentView === 'ai-attempts' && (
+            <motion.div
+              key="ai-attempts"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              <AIAttempts onBack={() => setCurrentView('home')} />
+            </motion.div>
+          )}
         </AnimatePresence>
       </main>
 
@@ -89,10 +102,10 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-blue-600 rounded-lg"></div>
-            <span className="font-heading font-bold text-xl tracking-tight">AR.DEV</span>
+            <span className="font-heading font-bold text-xl tracking-tight">DS.DEV</span>
           </div>
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Alex Rivera. Crafted with React & AI.
+            © {new Date().getFullYear()} Deeptisikha Bhaula. Crafted with React & AI.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-slate-400 hover:text-blue-600 transition-colors">LinkedIn</a>
