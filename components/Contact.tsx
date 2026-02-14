@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Location</div>
-                  <div className="font-bold text-slate-900">San Francisco, CA</div>
+                  <div className="font-bold text-slate-900">Surat, Gujarat, India</div>
                 </div>
               </div>
             </div>

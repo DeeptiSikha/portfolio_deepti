@@ -7,31 +7,61 @@ import { Project } from '../types';
 const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Aura AI - Meditation Companion',
-    description: 'A Flutter app using Gemini API to generate personalized meditation scripts based on user mood.',
-    longDescription: 'Aura AI is a revolutionary meditation app built with Flutter. It utilizes real-time facial sentiment analysis via ML Kit and generates bespoke audio-guided sessions using Gemini 2.5 Flash. The app features high-fidelity animations and a custom state management solution.',
-    image: 'https://picsum.photos/seed/aura/800/600',
-    tags: ['Flutter', 'Gemini API', 'Firebase', 'Rive'],
+    title: 'ReadysetConnect',
+    description: 'A high-performance networking solution built with Flutter for seamless professional connectivity.',
+    longDescription: 'ReadysetConnect is a comprehensive networking platform that streamlines professional interactions. Built with Flutter, it features real-time messaging, smart contact management, and integrated event scheduling.',
+    image: 'https://picsum.photos/seed/connect/800/600',
+    tags: ['Flutter', 'Firebase', 'Real-time Chat', 'BLoC'],
     link: '#',
     github: '#'
   },
   {
     id: '2',
-    title: 'Nexus Real Estate Pro',
-    description: 'Smart property management app with AI-powered price prediction and virtual tour integration.',
-    longDescription: 'Nexus helps real estate agents manage listings and leads. The integrated AI model predicts market trends and property values based on historical data. It includes a custom map implementation and real-time messaging using Firebase Cloud Messaging.',
-    image: 'https://picsum.photos/seed/nexus/800/600',
-    tags: ['Dart', 'Google Maps', 'TFLite', 'Node.js'],
+    title: 'Pawland',
+    description: 'A dedicated marketplace and community hub for pet lovers, featuring adoption and pet-care services.',
+    longDescription: 'Pawland connects pet owners with essential services and a thriving community. It includes modules for pet adoption, grooming appointments, and a social feed for pet enthusiasts, all optimized for a smooth mobile experience.',
+    image: 'https://picsum.photos/seed/pawland/800/600',
+    tags: ['Flutter', 'Dart', 'E-commerce', 'Cloud Firestore'],
     link: '#',
     github: '#'
   },
   {
     id: '3',
-    title: 'Visionary - Accessibility Tool',
-    description: 'An AI-powered assistant for the visually impaired using computer vision to describe surroundings.',
-    longDescription: 'Visionary uses the device camera to perform real-time object detection and OCR. It narrates the environment to the user via TTS. Winner of the 2023 Mobile Innovation Award.',
-    image: 'https://picsum.photos/seed/vision/800/600',
-    tags: ['Flutter', 'ML Kit', 'TTS', 'Clean Architecture'],
+    title: 'GPS Map Camera',
+    description: 'Utility application for capturing photos with precise real-time geotagging and metadata overlays.',
+    longDescription: 'GPS Map Camera allows users to capture moments with embedded location data. It provides customizable overlays including coordinates, address, and timestamps directly on the image, ideal for field workers and travelers.',
+    image: 'https://picsum.photos/seed/gps/800/600',
+    tags: ['Geotagging', 'Google Maps API', 'CameraX', 'Flutter'],
+    link: '#',
+    github: '#'
+  },
+  {
+    id: '4',
+    title: 'Meditation Music',
+    description: 'Product app featuring curated soundscapes and personalized meditation timers for mental wellness.',
+    longDescription: 'This Meditation Music product app provides users with a variety of high-quality ambient sounds. It features a sleek UI with customizable timers and offline playback capabilities to support mental health and focus.',
+    image: 'https://picsum.photos/seed/meditation/800/600',
+    tags: ['Audio Streaming', 'Wellness', 'UI/UX', 'Flutter'],
+    link: '#',
+    github: '#'
+  },
+  {
+    id: '5',
+    title: 'Wireless File transfer',
+    description: 'Fast and secure P2P file sharing utility across local networks without internet dependency.',
+    longDescription: 'Wireless File transfer leverages local Wi-Fi networks to enable high-speed file sharing between devices. It bypasses internet constraints, ensuring privacy and speed for large data transfers.',
+    image: 'https://picsum.photos/seed/transfer/800/600',
+    tags: ['Networking', 'P2P', 'Flutter', 'File System'],
+    link: '#',
+    github: '#'
+  },
+  {
+    id: '6',
+    title: 'Unit conversion',
+    description: 'Minimalistic and intuitive unit converter covering over 50 categories with real-time calculations.',
+    longDescription: 'A classic utility tool reimagined with a futuristic interface. It supports currency, measurement, and scientific unit conversions with a focus on speed and accuracy.',
+    image: 'https://picsum.photos/seed/unit/800/600',
+    tags: ['Utility', 'Algorithms', 'Flutter', 'Clean UI'],
     link: '#',
     github: '#'
   }

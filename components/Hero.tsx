@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
           className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-bold mb-8 uppercase tracking-widest"
         >
           <Zap size={14} className="fill-current" />
-          <span>BASED IN CALIFORNIA, USA</span>
+          <span>BASED IN SURAT, GUJARAT, INDIA</span>
         </motion.div>
 
         <motion.h1
@@ -115,6 +115,7 @@ const Hero: React.FC = () => {
         <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Mobile Screens</div>
       </motion.div>
 
+      {/* Floating Elements */}
       <motion.div
         animate={{
           y: [0, 20, 0],

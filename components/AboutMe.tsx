@@ -55,14 +55,14 @@ const AboutMe: React.FC<AboutMeProps> = ({ onBack }) => {
             <motion.div variants={itemVariants} className="mb-8">
               <h2 className="text-sm font-bold text-blue-600 uppercase tracking-[0.2em] mb-4">Behind the Code</h2>
               <h1 className="text-5xl md:text-7xl font-bold text-slate-900 leading-tight mb-6">
-                Alex Rivera <br />
+                Bhaula Deeptisikha <br />
                 <span className="italic font-light text-slate-400">The Architect</span>
               </h1>
             </motion.div>
 
             <motion.div variants={itemVariants} className="prose prose-slate prose-lg max-w-none text-slate-600 leading-relaxed mb-12 space-y-6">
               <p>
-                Hello! I'm Alex, a dedicated Flutter Developer with a core focus on bridging the gap between high-performance mobile engineering and the limitless possibilities of Artificial Intelligence.
+                Hello! I'm Bhaula Deeptisikha, a dedicated Flutter Developer with a core focus on bridging the gap between high-performance mobile engineering and the limitless possibilities of Artificial Intelligence.
               </p>
               <p>
                 Over the past 2 years, I've transformed from a mobile enthusiast into an AI-first architect. My journey is defined by a relentless pursuit of "Smart UX"—applications that don't just react to users, but understand and anticipate their needs through integrated machine learning and generative AI.
@@ -89,7 +89,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ onBack }) => {
             <motion.div variants={itemVariants} className="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-slate-100">
                <img 
                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
-                 alt="Alex Rivera Profile"
+                 alt="Bhaula Deeptisikha Profile"
                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-110 hover:scale-100"
                />
                <div className="absolute inset-0 bg-blue-600/10 mix-blend-overlay"></div>

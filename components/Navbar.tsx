@@ -63,8 +63,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
         >
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold group-hover:shadow-lg group-hover:shadow-blue-200 transition-all">A</div>
-          <span className="font-heading font-bold text-xl tracking-tight hidden sm:block">ALEX RIVERA</span>
+          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold group-hover:shadow-lg group-hover:shadow-blue-200 transition-all">B</div>
+          <span className="font-heading font-bold text-xl tracking-tight hidden sm:block">BHAULA DEEPTISIKHA</span>
         </motion.div>
 
         <div className="hidden md:flex items-center space-x-8">
